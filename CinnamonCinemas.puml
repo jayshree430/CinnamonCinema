@@ -1,6 +1,6 @@
 @startuml
 class Booking{
-    seat : Seat
+    -seat : Seat
 
     +allocateSeats : String
     +availableSeat : boolean
@@ -9,8 +9,8 @@ class Booking{
 Booking -> Seat
 
 class Seat{
-    rows : Enum
-    seatNumber : Enum
+    -rows : Enum
+    -seatNumber : Enum
 
     +getRows() : Enum
     +getSeatNumber : Enum
