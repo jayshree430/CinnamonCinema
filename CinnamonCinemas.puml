@@ -1,0 +1,37 @@
+@startuml
+class Booking{
+    seat : Seat
+
+    +allocateSeats : String
+    +availableSeat : boolean
+}
+
+Booking -> Seat
+
+class Seat{
+    rows : Enum
+    seatNumber : Enum
+
+    +getRows() : Enum
+    +getSeatNumber : Enum
+}
+
+Enum Row{
+    A,
+    B,
+    C
+}
+
+Seat -> Row
+
+Enum SeatNumber{
+    ONE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE
+}
+
+Seat -> SeatNumber
+
+@enduml
