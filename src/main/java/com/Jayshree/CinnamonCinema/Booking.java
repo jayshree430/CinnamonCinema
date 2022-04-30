@@ -34,8 +34,7 @@ public class Booking {
                     } else {
                         int columnCount = counter % maxSeatCapacity;
                         if (columnCount == 0) {
-                         /****If the counter has reached the max
-                           Column value the changing the row ****/
+                         /****If the counter has reached the maximum seat number(5) then changing the row ****/
                             rowCount++;
                         }
                         seatList.add(new Seat(Row.values()[rowCount], SeatNumber.values()[columnCount]));
