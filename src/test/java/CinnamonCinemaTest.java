@@ -5,6 +5,7 @@ import com.Jayshree.CinnamonCinema.SeatNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,5 +58,22 @@ public class CinnamonCinemaTest {
         assertEquals(Row.A, seatList.get(0).getRow());
         assertEquals(SeatNumber.THREE, seatList.get(2).getSeatNumber());
     }
+
+    @Test
+    public void checkSeatAllocationInSameRow(){
+        String message = booking.allocateSeat(3);
+        assertEquals("Seat allocated : 3", message);
+
+        message = booking.allocateSeat(2);
+        assertEquals("Seat allocated : 2", message);
+
+        List<Seat> seatList = booking.getSeatList();
+        assertEquals(5, seatList.size());
+        assertEquals(Row.A, seatList.get(0).getRow());
+        assertEquals(SeatNumber.FIVE, seatList.get(4).getSeatNumber());
+
+    }
+
+
 
 }

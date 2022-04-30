@@ -20,25 +20,28 @@ public class Booking {
 
     public String allocateSeat(int input){
 
-        if (seatAvailable(input)){
-            for (int i = 0; i < input; i++) {
+        try {
+            if (seatAvailable(input)) {
+                for (int i = 0; i < input; i++) {
 
-                if (counter == 0) {
-                    seatList.add(new Seat(Row.A, SeatNumber.ONE));
-                } else {
-                    int columnCount = counter % maxSeatCapacity;
-                    if (columnCount == 0) {
-                        rowCount++;
+                    if (counter == 0) {
+                        seatList.add(new Seat(Row.A, SeatNumber.ONE));
+                    } else {
+                        int columnCount = counter % maxSeatCapacity;
+                        if (columnCount == 0) {
+                            rowCount++;
+                        }
+                        seatList.add(new Seat(Row.values()[rowCount], SeatNumber.values()[columnCount]));
                     }
-                    seatList.add(new Seat(Row.values()[rowCount], SeatNumber.values()[columnCount]));
+                    counter++;
                 }
-                counter++;
+            } else {
+                return "No more seat available";
             }
-            return "Seat allocated : " + input;
-        }else {
-            return "No more seat available";
+        }catch (Exception e){
+            System.out.println(e);
         }
-
+        return "Seat allocated : " + input;
     }
 
 }
