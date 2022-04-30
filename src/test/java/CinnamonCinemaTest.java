@@ -5,7 +5,6 @@ import com.Jayshree.CinnamonCinema.SeatNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,6 +76,30 @@ public class CinnamonCinemaTest {
     public void checkRequestedSeatIsBetween1And3(){
         String message = booking.allocateSeat(5);
         assertEquals("Input must be between 1 - 3", message);
+    }
+
+    @Test
+    public void checkSeatAllocationInDifferentRow(){
+        String message = booking.allocateSeat(3);
+        assertEquals("Seat allocated : 3", message);
+
+        message = booking.allocateSeat(2);
+        assertEquals("Seat allocated : 2", message);
+
+        message = booking.allocateSeat(3);
+        assertEquals("Seat allocated : 3", message);
+
+        message = booking.allocateSeat(3);
+        assertEquals("Seat allocated : 3", message);
+
+        List<Seat> seatList = booking.getSeatList();
+        assertEquals(11, seatList.size());
+        assertEquals(Row.B, seatList.get(6).getRow());
+        assertEquals(SeatNumber.TWO, seatList.get(6).getSeatNumber());
+
+        assertEquals(Row.C, seatList.get(10).getRow());
+        assertEquals(SeatNumber.ONE, seatList.get(10).getSeatNumber());
+
     }
 
 
