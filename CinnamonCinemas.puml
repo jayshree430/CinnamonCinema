@@ -2,8 +2,8 @@
 class Booking{
     -seat : Seat
 
-    +allocateSeats : String
-    +availableSeat : boolean
+    +allocateSeats() : String
+    +availableSeat() : boolean
 }
 
 Booking -> Seat
@@ -13,7 +13,7 @@ class Seat{
     -seatNumber : Enum
 
     +getRows() : Enum
-    +getSeatNumber : Enum
+    +getSeatNumber() : Enum
 }
 
 Enum Row{
