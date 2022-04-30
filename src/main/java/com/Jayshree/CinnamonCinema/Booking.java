@@ -11,6 +11,7 @@ public class Booking {
     private int rowCount = 0;
 
     public boolean seatAvailable(int input){
+        /*** Checking if there is space to allocate requested seats *****/
         return counter+input <= (maxRowCapacity * maxSeatCapacity);
     }
 
@@ -20,6 +21,8 @@ public class Booking {
 
     public String allocateSeat(int input){
         try {
+
+            /*** Checking if the input is between 1 & 3 ****/
             if (input >3 || input <1){
                 return "Input must be between 1 - 3";
             }
@@ -31,6 +34,8 @@ public class Booking {
                     } else {
                         int columnCount = counter % maxSeatCapacity;
                         if (columnCount == 0) {
+                         /****If the counter has reached the max
+                           Column value the changing the row ****/
                             rowCount++;
                         }
                         seatList.add(new Seat(Row.values()[rowCount], SeatNumber.values()[columnCount]));
@@ -38,7 +43,8 @@ public class Booking {
                     counter++;
                 }
             } else {
-                return "No more seat available";
+                /*** returning the message if allocation of the seat is not possible***/
+                return "Seat allocation not possible";
             }
         }catch (Exception e){
             System.out.println(e);
