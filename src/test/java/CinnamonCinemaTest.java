@@ -30,4 +30,16 @@ public class CinnamonCinemaTest {
 
     }
 
+    @Test
+    public void checkSingleSeatAllocation(){
+        String message = booking.allocateSeat(1);
+        assertEquals("Seat allocated : 1", message);
+    }
+
+    @Test
+    public void checkTwoSeatsAreAllocated(){
+        String message = booking.allocateSeat(2);
+        assertEquals("Seat allocated : 2", message);
+    }
+
 }
