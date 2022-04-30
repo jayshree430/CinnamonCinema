@@ -73,7 +73,11 @@ public class CinnamonCinemaTest {
         assertEquals(SeatNumber.FIVE, seatList.get(4).getSeatNumber());
 
     }
-
+    @Test
+    public void checkRequestedSeatIsBetween1And3(){
+        String message = booking.allocateSeat(5);
+        assertEquals("Input must be between 1 - 3", message);
+    }
 
 
 }

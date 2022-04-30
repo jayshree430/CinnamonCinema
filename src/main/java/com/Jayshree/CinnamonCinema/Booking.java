@@ -1,5 +1,6 @@
 package com.Jayshree.CinnamonCinema;
 
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,10 @@ public class Booking {
     }
 
     public String allocateSeat(int input){
-
         try {
+            if (input >3 || input <1){
+                return "Input must be between 1 - 3";
+            }
             if (seatAvailable(input)) {
                 for (int i = 0; i < input; i++) {
 
