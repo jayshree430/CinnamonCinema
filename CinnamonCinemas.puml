@@ -1,9 +1,13 @@
 @startuml
 class Booking{
     -seat : Seat
+    -seatList : List<Seat>
+    -counter : int
+    -rowCounter : int
 
-    +allocateSeats() : String
-    +availableSeat() : boolean
+    +getSeatList() : List<Seat>
+    +allocateSeats(int input) : String
+    +seatAvailable(Int input) : boolean
 }
 
 Booking -> Seat
