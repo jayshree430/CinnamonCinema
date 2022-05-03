@@ -38,19 +38,19 @@ public class CinnamonCinemaTest {
     @Test
     public void checkSingleSeatAllocation(){
         String message = booking.allocateSeat(1);
-        assertEquals("Seat allocated : 1", message);
+        assertEquals("- Seat allocated : A1", message);
     }
 
     @Test
     public void checkTwoSeatsAreAllocated(){
         String message = booking.allocateSeat(2);
-        assertEquals("Seat allocated : 2", message);
+        assertEquals("- Seat allocated : A1 A2", message);
     }
 
     @Test
-    public void checkThreeSeatsAreAllocated(){
+    public void checkThreeSeatsAreAllocated() {
         String message = booking.allocateSeat(3);
-        assertEquals("Seat allocated : 3", message);
+        assertEquals("- Seat allocated : A1 A2 A3", message);
 
         List<Seat> seatList = booking.getSeatList();
         assertEquals(3, seatList.size());
@@ -61,10 +61,10 @@ public class CinnamonCinemaTest {
     @Test
     public void checkSeatAllocationInSameRow(){
         String message = booking.allocateSeat(3);
-        assertEquals("Seat allocated : 3", message);
+        assertEquals("- Seat allocated : A1 A2 A3", message);
 
         message = booking.allocateSeat(2);
-        assertEquals("Seat allocated : 2", message);
+        assertEquals("- Seat allocated : A4 A5", message);
 
         List<Seat> seatList = booking.getSeatList();
         assertEquals(5, seatList.size());
@@ -81,16 +81,16 @@ public class CinnamonCinemaTest {
     @Test
     public void checkSeatAllocationInDifferentRow(){
         String message = booking.allocateSeat(3);
-        assertEquals("Seat allocated : 3", message);
+        assertEquals("- Seat allocated : A1 A2 A3", message);
 
         message = booking.allocateSeat(2);
-        assertEquals("Seat allocated : 2", message);
+        assertEquals("- Seat allocated : A4 A5", message);
 
         message = booking.allocateSeat(3);
-        assertEquals("Seat allocated : 3", message);
+        assertEquals("- Seat allocated : B1 B2 B3", message);
 
         message = booking.allocateSeat(3);
-        assertEquals("Seat allocated : 3", message);
+        assertEquals("- Seat allocated : B4 B5 C1", message);
 
         List<Seat> seatList = booking.getSeatList();
         assertEquals(11, seatList.size());
