@@ -39,6 +39,12 @@ So that I can control reserved seating for the theatre
 * Enum classes to hold the row names (A, B, C) and column name (1, 2, 3, 4, 5).
 * Booking class will be controller class that implements methods to check for valid inputs, check for available seats and finally allocate the seats.
 
+**Future Enhancements**
+
+* Displaying the reserved seat numbers for the customer in form of Matrix of Row and Seatnumber. 
+* Allowing user to select preferred seats and continue to reserve if available.
+* Increasing the number of seats in the Movie Theatre
+
 **Technologies Used**
 * Java
 * maven
