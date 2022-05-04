@@ -34,10 +34,15 @@ So that I can control reserved seating for the theatre
 
 **Implementation**
 
-* Starting with TTD approach. So will start by creating simple tests first to check if single seat is available. 
+* Starting with TTD approach. I started by creating simple tests first to check if single seat is available, then creating more tests with incrementing the seat requests. 
 * Seat class is a model class which will hold 3 rows (A, B, C) and 5 columns. 
 * Enum classes to hold the row names (A, B, C) and column name (1, 2, 3, 4, 5).
 * Booking class will be controller class that implements methods to check for valid inputs, check for available seats and finally allocate the seats.
+* Saving the seats in a List object, so that they can be used for future operations.
+
+** Class Diagram **
+
+![img.png](img.png)
 
 **Future Enhancements**
 

@@ -54,7 +54,7 @@ public class Booking {
                 return "- Seat allocation not possible";
             }
         }catch (Exception e){
-            System.out.println(e);
+                System.out.println(e);
         }
         return "- Seat allocated :" + message;
     }
