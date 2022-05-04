@@ -40,7 +40,7 @@ So that I can control reserved seating for the theatre
 * Booking class will be controller class that implements methods to check for valid inputs, check for available seats and finally allocate the seats.
 * Saving the seats in a List object, so that they can be used for future operations.
 
-** Class Diagram **
+**Class Diagram**
 
 ![img.png](img.png)
 
