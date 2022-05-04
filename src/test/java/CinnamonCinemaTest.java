@@ -102,4 +102,30 @@ public class CinnamonCinemaTest {
 
     }
 
+    @Test
+    public void checkRequestedSeatCannotBeAllocated(){
+
+        String message = booking.allocateSeat(3);
+        assertEquals("- Seat allocated : A1 A2 A3", message);
+
+        message = booking.allocateSeat(2);
+        assertEquals("- Seat allocated : A4 A5", message);
+
+        message = booking.allocateSeat(3);
+        assertEquals("- Seat allocated : B1 B2 B3", message);
+
+        message = booking.allocateSeat(3);
+        assertEquals("- Seat allocated : B4 B5 C1", message);
+
+        message = booking.allocateSeat(2);
+        assertEquals("- Seat allocated : C2 C3", message);
+
+        message = booking.allocateSeat(3);
+        assertEquals("- Seat allocation not possible", message);
+
+        message = booking.allocateSeat(1);
+        assertEquals("- Seat allocated : C4", message);
+
+    }
+
 }
